@@ -1,0 +1,3025 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="description" content="Global Academy for Research and Publication - Enterprise-level research mentorship, thesis support, and journal publication assistance across Q1-Q4 quartiles">
+   <meta name="keywords" content="research publication, journal article, thesis writing, academic mentorship, Q1 Q2 Q3 Q4 journals, conference papers, research guidance">
+   <meta name="author" content="GARP">
+-  <title>GARP | Global Academy for Research and Publication - Neon Tech</title>
++  <title>GARP | Global Academy for Research and Publication</title>
+ 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+ 
+   <style>
+     /* =========================
+        NEON TECH — SINGLE FILE
+        Virtual pages via hash routes: #/home, #/services, etc.
+        ========================= */
+ 
+     *{margin:0;padding:0;box-sizing:border-box;}
+     :root{
+       /* Core */
+-      --bg0:#050610;
+-      --bg1:#070a18;
+-      --bg2:#0b1030;
+-      --panel:rgba(255,255,255,.06);
++      --bg0:#0b1220;
++      --bg1:#0d1628;
++      --bg2:#111a30;
++      --panel:rgba(255,255,255,.05);
+       --panel2:rgba(255,255,255,.08);
+-      --border:rgba(255,255,255,.12);
+-      --border-strong:rgba(255,255,255,.22);
+-      --text:#ffffff;
+-      --text-secondary:rgba(255,255,255,.82);
+-      --text-muted:rgba(255,255,255,.65);
+-
+-      /* Neon palette */
+-      --neon-cyan:#00e5ff;
+-      --neon-blue:#3b82f6;
+-      --neon-violet:#8b5cf6;
+-      --neon-magenta:#ff2bd6;
+-      --neon-lime:#2cff6d;
+-      --neon-amber:#ffb020;
++      --border:rgba(255,255,255,.14);
++      --border-strong:rgba(255,255,255,.24);
++      --text:#f8fafc;
++      --text-secondary:rgba(248,250,252,.78);
++      --text-muted:rgba(248,250,252,.58);
++
++      /* Unified digital blue palette */
++      --neon-cyan:#5aa2ff;
++      --neon-blue:#4f8dfc;
++      --neon-violet:#4f8dfc;
++      --neon-magenta:#4f8dfc;
++      --neon-lime:#34d399;
++      --neon-amber:#fbbf24;
+ 
+       --accent:var(--neon-cyan);
+       --accent2:var(--neon-violet);
+ 
+       --shadow-sm:0 2px 10px rgba(0,0,0,.25);
+       --shadow-md:0 12px 30px rgba(0,0,0,.35);
+       --shadow-lg:0 24px 70px rgba(0,0,0,.55);
+ 
+       --success:#25d366;
+ 
+-      --grad-neon:linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-violet) 45%, var(--neon-magenta) 100%);
+-      --grad-neon-2:linear-gradient(135deg, #00e5ff 0%, #3b82f6 50%, #8b5cf6 100%);
+-      --grad-green:linear-gradient(135deg, var(--neon-lime) 0%, var(--neon-cyan) 100%);
++      --grad-neon:linear-gradient(135deg, rgba(79,141,252,.98) 0%, rgba(79,141,252,.85) 55%, rgba(79,141,252,.70) 100%);
++      --grad-neon-2:linear-gradient(135deg, rgba(79,141,252,.95) 0%, rgba(79,141,252,.80) 50%, rgba(79,141,252,.65) 100%);
++      --grad-green:linear-gradient(135deg, rgba(52,211,153,.95) 0%, rgba(79,141,252,.85) 100%);
+ 
+       --radius-xl:26px;
+       --radius-lg:22px;
+       --radius-md:16px;
+ 
+       --header-h:80px;
+     }
+ 
+     /* Optional light mode (kept minimal) */
+     body.light{
+       --bg0:#f7f9ff;
+       --bg1:#eef3ff;
+       --bg2:#dfe8ff;
+       --panel:rgba(0,0,0,.045);
+       --panel2:rgba(0,0,0,.07);
+       --border:rgba(0,0,0,.12);
+       --border-strong:rgba(0,0,0,.20);
+       --text:#071022;
+       --text-secondary:rgba(7,16,34,.78);
+       --text-muted:rgba(7,16,34,.62);
+ 
+       --shadow-sm:0 2px 10px rgba(2,8,23,.10);
+       --shadow-md:0 12px 30px rgba(2,8,23,.14);
+       --shadow-lg:0 24px 70px rgba(2,8,23,.18);
+     }
+ 
+     html,body{height:100%;}
+     body{
+       font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+       background:
+-        radial-gradient(1200px 600px at 15% 15%, rgba(0,229,255,.20), transparent 55%),
+-        radial-gradient(900px 500px at 90% 10%, rgba(255,43,214,.14), transparent 55%),
+-        radial-gradient(1000px 700px at 60% 95%, rgba(139,92,246,.16), transparent 60%),
++        radial-gradient(1200px 600px at 15% 12%, rgba(79,141,252,.18), transparent 58%),
++        radial-gradient(900px 520px at 90% 8%, rgba(79,141,252,.14), transparent 58%),
++        radial-gradient(1000px 700px at 60% 92%, rgba(79,141,252,.10), transparent 62%),
+         linear-gradient(to bottom right, var(--bg0), var(--bg1));
+       color:var(--text);
+       overflow-x:hidden;
+       line-height:1.6;
+     }
+ 
+     a{color:inherit;text-decoration:none;}
+     .container{max-width:1280px;margin:0 auto;}
+     section{padding:90px 8%;}
+ 
+     h1,h2,h3,h4{font-family:"Poppins",sans-serif;letter-spacing:-.5px;}
+     h1{font-size:54px;font-weight:900;line-height:1.06;}
+     h2{font-size:40px;font-weight:800;margin-bottom:16px;}
+     h3{font-size:22px;font-weight:700;}
+     h4{font-size:18px;font-weight:700;}
+ 
+     /* ======= Subtle neon scanlines + noise ======= */
+     .fx{
+       position:fixed; inset:0;
+       pointer-events:none;
+       z-index:0;
+     }
+     .fx::before{
+       content:"";
+       position:absolute; inset:0;
+       background:
+         linear-gradient(to bottom, rgba(255,255,255,.04), rgba(255,255,255,0) 18%),
+         repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 6px);
+       mix-blend-mode:overlay;
+-      opacity:.25;
++      opacity:.12;
+     }
+     .fx::after{
+       content:"";
+       position:absolute; inset:0;
+       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+-      opacity:.05;
++      opacity:.03;
+       mix-blend-mode:overlay;
+     }
+ 
+     /* ======= Header ======= */
+     header{
+       position:sticky; top:0; z-index:1000;
+       height:var(--header-h);
+       display:flex; align-items:center;
+-      background:rgba(5,6,16,.72);
++      background:rgba(8,14,28,.82);
+       backdrop-filter: blur(18px);
+       border-bottom:1px solid rgba(255,255,255,.10);
+       box-shadow:var(--shadow-sm);
+     }
+     body.light header{background:rgba(255,255,255,.82);}
+ 
+     .navwrap{
+       padding:14px 8%;
+       width:100%;
+       display:flex;
+       align-items:center;
+       justify-content:space-between;
+       gap:18px;
+       position:relative;
+       z-index:2;
+     }
+ 
+     .logo-area{
+       display:flex;
+       align-items:center;
+       gap:14px;
+       min-width:220px;
+     }
+     .logo-box{
+       width:52px;height:52px;
+       border-radius:14px;
+       background:var(--grad-neon);
+       display:flex;align-items:center;justify-content:center;
+       font-weight:900;font-size:26px;
+       color:#061021;
+       box-shadow:
+         0 0 0 1px rgba(255,255,255,.12),
+-        0 10px 26px rgba(0,229,255,.20),
+-        0 12px 40px rgba(255,43,214,.12);
++        0 10px 26px rgba(79,141,252,.20),
++        0 12px 40px rgba(79,141,252,.12);
+       background-size:cover;
+       background-position:center;
+       position:relative;
+       overflow:hidden;
+     }
+     .logo-box::after{
+       content:"";
+       position:absolute; inset:-40%;
+-      background:conic-gradient(from 90deg, rgba(0,229,255,.0), rgba(0,229,255,.45), rgba(255,43,214,.35), rgba(139,92,246,.35), rgba(0,229,255,.0));
++      background:conic-gradient(from 90deg, rgba(79,141,252,.0), rgba(79,141,252,.45), rgba(79,141,252,.35), rgba(79,141,252,.35), rgba(79,141,252,.0));
+       filter:blur(10px);
+       opacity:.55;
+       animation:spinGlow 8s linear infinite;
+     }
+     @keyframes spinGlow{to{transform:rotate(360deg)}}
+ 
+     .brand{display:flex;flex-direction:column;line-height:1.15;}
+     .brand strong{
+       font-size:20px;
+       letter-spacing:.3px;
+       font-family:"Poppins",sans-serif;
+-      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
++      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     .brand span{font-size:11px;opacity:.78;margin-top:2px;}
+ 
+     nav{
+       display:flex;align-items:center;gap:6px;
+       flex-wrap:wrap;justify-content:flex-end;
+     }
+     nav a{
+       font-weight:700;font-size:13px;opacity:.92;
+       transition:.2s;
+       padding:10px 14px;border-radius:10px;
+       border:1px solid transparent;
+     }
+     nav a:hover{
+       color:var(--accent);
+-      background:rgba(0,229,255,.10);
+-      border-color:rgba(0,229,255,.22);
+-      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 28px rgba(0,229,255,.10);
++      background:rgba(79,141,252,.10);
++      border-color:rgba(79,141,252,.22);
++      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 28px rgba(79,141,252,.10);
+     }
+     nav a.active{
+-      background:rgba(255,43,214,.10);
+-      border-color:rgba(255,43,214,.26);
+-      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 28px rgba(255,43,214,.10);
++      background:rgba(79,141,252,.10);
++      border-color:rgba(79,141,252,.26);
++      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 28px rgba(79,141,252,.10);
+     }
+ 
+     .nav-actions{
+       display:flex;align-items:center;gap:10px;
+       min-width:140px;justify-content:flex-end;
+     }
+     .iconbtn{
+       border:1px solid rgba(255,255,255,.14);
+       background:rgba(255,255,255,.06);
+       color:var(--text);
+       border-radius:12px;
+       padding:10px 14px;
+       cursor:pointer;
+       font-weight:900;
+       transition:.2s;
+       box-shadow:var(--shadow-sm);
+       font-size:16px;
+       position:relative;
+       overflow:hidden;
+     }
+     .iconbtn::after{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:linear-gradient(90deg, rgba(0,229,255,.0), rgba(0,229,255,.25), rgba(255,43,214,.18), rgba(0,229,255,.0));
++      background:linear-gradient(90deg, rgba(79,141,252,.0), rgba(79,141,252,.25), rgba(79,141,252,.18), rgba(79,141,252,.0));
+       opacity:.0;
+       transform:translateX(-35%);
+       transition:.35s;
+     }
+     .iconbtn:hover{
+       transform:translateY(-1px);
+-      border-color:rgba(0,229,255,.32);
+-      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 14px 32px rgba(0,229,255,.10);
++      border-color:rgba(79,141,252,.32);
++      box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 14px 32px rgba(79,141,252,.10);
+     }
+     .iconbtn:hover::after{
+       opacity:1;
+       transform:translateX(35%);
+     }
+     .menu-btn{display:none;}
+ 
+     /* ======= Kicker ======= */
+     .kicker{
+       display:inline-flex;align-items:center;gap:10px;
+       padding:9px 16px;
+       border:1px solid rgba(255,255,255,.14);
+-      background:rgba(0,229,255,.08);
++      background:rgba(79,141,252,.10);
+       border-radius:999px;
+       color:var(--neon-cyan);
+       font-weight:900;
+       font-size:12px;
+       margin-bottom:20px;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.05), 0 16px 40px rgba(0,229,255,.07);
++      box-shadow:0 0 0 1px rgba(255,255,255,.05), 0 16px 40px rgba(79,141,252,.07);
+     }
+ 
+     /* ======= App Shell + Pages ======= */
+     .app{
+       position:relative;
+       z-index:1;
+       min-height:calc(100vh - var(--header-h));
+       display:flex;
+       flex-direction:column;
+     }
+ 
+     .page{
+       display:none;
+       animation:pageIn .32s ease both;
+     }
+     .page.active{display:block;}
+     @keyframes pageIn{
+       from{opacity:0; transform:translateY(8px) scale(.995); filter:blur(2px)}
+       to{opacity:1; transform:none; filter:none}
+     }
+ 
+     /* ======= Hero ======= */
+     .hero{
+       padding-top:70px;
+       padding-bottom:90px;
+       position:relative;
+       overflow:hidden;
+     }
+     .hero::before{
+       content:"";
+       position:absolute;
+       inset:-240px -140px auto -140px;
+       height:650px;
+       background:
+-        radial-gradient(closest-side, rgba(0,229,255,.28), transparent 70%),
+-        radial-gradient(closest-side, rgba(255,43,214,.16), transparent 65%),
+-        radial-gradient(closest-side, rgba(139,92,246,.16), transparent 65%);
++        radial-gradient(closest-side, rgba(79,141,252,.22), transparent 70%),
++        radial-gradient(closest-side, rgba(79,141,252,.16), transparent 65%),
++        radial-gradient(closest-side, rgba(79,141,252,.14), transparent 65%);
+       filter:blur(14px);
+       pointer-events:none;
+       animation:heroPulse 6s ease-in-out infinite;
+       opacity:.95;
+     }
+     @keyframes heroPulse{
+       0%,100%{transform:translateY(0px)}
+       50%{transform:translateY(14px)}
+     }
+ 
+     .hero-grid{
+       display:grid;
+       grid-template-columns:1.15fr .85fr;
+       gap:60px;
+       align-items:center;
+       position:relative;
+       z-index:1;
+     }
+     .hero h1{margin-top:18px;line-height:1.06;}
+     .hero .subtitle{
+       font-size:22px;
+       font-weight:800;
+       margin-top:14px;
+       letter-spacing:-.3px;
+-      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
++      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     .hero p{
+       margin-top:18px;
+       font-size:18px;
+       color:var(--text-secondary);
+       line-height:1.75;
+     }
+ 
+     .btnrow{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+     .btn{
+       display:inline-flex;
+       align-items:center;
+       justify-content:center;
+       gap:10px;
+       padding:15px 30px;
+       border-radius:999px;
+       font-weight:900;
+       font-size:14px;
+       border:1px solid rgba(255,255,255,.14);
+       background:rgba(255,255,255,.06);
+       transition:.25s;
+       box-shadow:var(--shadow-sm);
+       cursor:pointer;
+       position:relative;
+       overflow:hidden;
+     }
+     .btn::after{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:linear-gradient(90deg, rgba(0,229,255,.0), rgba(0,229,255,.22), rgba(255,43,214,.16), rgba(0,229,255,.0));
++      background:linear-gradient(90deg, rgba(79,141,252,.0), rgba(79,141,252,.22), rgba(79,141,252,.16), rgba(79,141,252,.0));
+       opacity:.0; transform:translateX(-35%);
+       transition:.35s;
+     }
+     .btn:hover{
+       transform:translateY(-2px);
+       box-shadow:var(--shadow-md);
+-      border-color:rgba(0,229,255,.30);
++      border-color:rgba(79,141,252,.30);
+     }
+     .btn:hover::after{opacity:1; transform:translateX(35%);}
+     .btn.primary{
+       background:var(--grad-neon);
+       color:#061021;
+       border:none;
+       font-weight:1000;
+       box-shadow:
+         0 0 0 1px rgba(255,255,255,.10),
+-        0 16px 48px rgba(0,229,255,.12),
+-        0 20px 70px rgba(255,43,214,.10);
++        0 16px 48px rgba(79,141,252,.18),
++        0 20px 70px rgba(79,141,252,.12);
++    }
++    .btn.secondary{
++      background:rgba(79,141,252,.14);
++      border-color:rgba(79,141,252,.32);
++      color:var(--text);
++    }
++    .btn.ghost{
++      background:transparent;
++      border-color:rgba(255,255,255,.18);
++      color:var(--text-secondary);
++      box-shadow:none;
+     }
+     .btn.whats{
+       background:rgba(37,211,102,.16);
+       border-color:rgba(37,211,102,.38);
+     }
+     .btn.messenger{
+-      background:rgba(0,132,255,.16);
+-      border-color:rgba(0,132,255,.38);
++      background:rgba(79,141,252,.16);
++      border-color:rgba(79,141,252,.38);
+     }
+ 
+     .hero-card{
+-      background:rgba(255,255,255,.06);
+-      border:1px solid rgba(255,255,255,.12);
++      background:rgba(255,255,255,.05);
++      border:1px solid rgba(255,255,255,.14);
+       border-radius:var(--radius-xl);
+       padding:32px;
+       box-shadow:var(--shadow-lg);
+       position:relative;
+       overflow:hidden;
+       transform-style:preserve-3d;
+       perspective:900px;
+     }
+     .hero-card::before{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:conic-gradient(from 180deg, rgba(0,229,255,.0), rgba(0,229,255,.22), rgba(255,43,214,.18), rgba(139,92,246,.18), rgba(0,229,255,.0));
++      background:conic-gradient(from 180deg, rgba(79,141,252,.0), rgba(79,141,252,.18), rgba(79,141,252,.16), rgba(79,141,252,.16), rgba(79,141,252,.0));
+       filter:blur(18px);
+       opacity:.65;
+       pointer-events:none;
+     }
+     .hero-card::after{
+       content:"";
+       position:absolute;
+       inset:-110px -110px auto auto;
+       width:320px;height:320px;border-radius:50%;
+-      background:radial-gradient(circle at 30% 30%, rgba(0,229,255,.35), transparent 65%);
++      background:radial-gradient(circle at 30% 30%, rgba(79,141,252,.28), transparent 65%);
+       filter:blur(10px);
+       opacity:.95;
+       pointer-events:none;
+     }
+ 
+     .mini-grid{
+       display:grid;
+       grid-template-columns:1fr 1fr;
+       gap:16px;
+       margin-top:18px;
+       position:relative;
+       z-index:1;
+     }
+     .pill{
+       border:1px solid rgba(255,255,255,.12);
+       background:rgba(255,255,255,.04);
+       border-radius:18px;
+       padding:18px;
+       min-height:90px;
+       transition:.25s;
+       position:relative;
+       overflow:hidden;
+     }
+     .pill::after{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:radial-gradient(600px 120px at 10% 10%, rgba(0,229,255,.16), transparent 40%),
+-                 radial-gradient(520px 140px at 90% 90%, rgba(255,43,214,.12), transparent 45%);
++      background:radial-gradient(600px 120px at 10% 10%, rgba(79,141,252,.16), transparent 40%),
++                 radial-gradient(520px 140px at 90% 90%, rgba(79,141,252,.12), transparent 45%);
+       opacity:.6;
+       pointer-events:none;
+     }
+     .pill:hover{
+       background:rgba(255,255,255,.06);
+       border-color:rgba(255,255,255,.22);
+       transform:translateY(-2px);
+-      box-shadow:0 18px 45px rgba(0,229,255,.08);
++      box-shadow:0 18px 45px rgba(79,141,252,.08);
+     }
+     .pill strong{
+       display:block;
+       font-size:26px;
+       font-weight:1000;
+       margin-bottom:7px;
+-      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
++      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+       position:relative;
+       z-index:1;
+     }
+     .pill span{
+       opacity:.88;
+       font-size:13px;
+       line-height:1.45;
+       position:relative;
+       z-index:1;
+     }
+ 
+     /* ======= Stats Dashboard ======= */
+     .stats-section{
+-      background:linear-gradient(135deg, rgba(0,229,255,.18) 0%, rgba(139,92,246,.14) 55%, rgba(255,43,214,.12) 100%);
++      background:linear-gradient(135deg, rgba(79,141,252,.16) 0%, rgba(79,141,252,.12) 55%, rgba(79,141,252,.12) 100%);
+       border-top:1px solid rgba(255,255,255,.12);
+       border-bottom:1px solid rgba(255,255,255,.12);
+       padding:70px 8%;
+       position:relative;
+       overflow:hidden;
+     }
+     .stats-section::before{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:radial-gradient(800px 350px at 25% 0%, rgba(0,229,255,.18), transparent 60%),
+-                 radial-gradient(700px 300px at 85% 20%, rgba(255,43,214,.12), transparent 60%);
++      background:radial-gradient(800px 350px at 25% 0%, rgba(79,141,252,.16), transparent 60%),
++                 radial-gradient(700px 300px at 85% 20%, rgba(79,141,252,.12), transparent 60%);
+       pointer-events:none;
+       filter:blur(10px);
+       opacity:.9;
+     }
+     .stats-grid{
+       position:relative;
+       z-index:1;
+       display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+       gap:40px;
+       text-align:center;
+     }
+     .stat-item h3{
+       font-size:48px;
+       font-weight:1100;
+       margin-bottom:8px;
+       background:linear-gradient(90deg,#fff,rgba(255,255,255,.75));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+-      text-shadow:0 0 28px rgba(0,229,255,.12);
++      text-shadow:0 0 28px rgba(79,141,252,.12);
+     }
+     .stat-item p{
+       font-size:15px;
+       opacity:.95;
+       font-weight:700;
+       color:rgba(255,255,255,.92);
+     }
++    .trust-strip{
++      position:relative;
++      z-index:1;
++      margin-top:36px;
++      display:flex;
++      flex-wrap:wrap;
++      gap:12px;
++      justify-content:center;
++    }
++    .trust-badge{
++      padding:10px 18px;
++      border-radius:999px;
++      background:rgba(255,255,255,.08);
++      border:1px solid rgba(255,255,255,.14);
++      font-size:12px;
++      font-weight:800;
++      color:var(--text-secondary);
++      letter-spacing:.2px;
++    }
+ 
+     /* ======= Section header ======= */
+     .section-header{text-align:center;margin-bottom:60px;}
+     .section-header h2{
+       font-size:44px;margin-bottom:14px;
+-      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
++      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     .section-header p{
+       font-size:18px;
+       color:var(--text-secondary);
+       max-width:780px;
+       margin:0 auto;
+       line-height:1.7;
+     }
+ 
+     /* ======= Cards/Grid ======= */
+     .grid{display:grid;gap:24px;}
+     .cards-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));}
+     .cards-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+     .cards-4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+ 
+     .card{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:var(--radius-lg);
+       padding:32px;
+       transition:.25s;
+       position:relative;
+       overflow:hidden;
+       transform-style:preserve-3d;
+       will-change:transform;
+     }
+     .card::before{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:radial-gradient(700px 180px at 20% 10%, rgba(0,229,255,.12), transparent 45%),
+-                 radial-gradient(650px 180px at 90% 90%, rgba(255,43,214,.10), transparent 48%);
++      background:radial-gradient(700px 180px at 20% 10%, rgba(79,141,252,.12), transparent 45%),
++                 radial-gradient(650px 180px at 90% 90%, rgba(79,141,252,.10), transparent 48%);
+       opacity:.75;
+       pointer-events:none;
+     }
+     .card:hover{
+       transform:translateY(-6px);
+-      border-color:rgba(0,229,255,.32);
++      border-color:rgba(79,141,252,.32);
+       box-shadow:
+         0 0 0 1px rgba(255,255,255,.06),
+-        0 20px 55px rgba(0,229,255,.12),
+-        0 26px 80px rgba(255,43,214,.08);
++        0 20px 55px rgba(79,141,252,.12),
++        0 26px 80px rgba(79,141,252,.08);
+       background:rgba(255,255,255,.08);
+     }
+     .card h3{
+       color:var(--neon-cyan);
+       margin-bottom:14px;
+       font-size:21px;
+       position:relative; z-index:1;
+     }
+     .card p{
+       color:var(--text-secondary);
+       line-height:1.75;
+       font-size:15px;
+       position:relative; z-index:1;
+     }
+ 
+     .badge{
+       display:inline-flex;align-items:center;gap:8px;
+       font-size:12px;
+       font-weight:900;
+       padding:7px 14px;border-radius:999px;
+-      border:1px solid rgba(0,229,255,.26);
+-      background:rgba(0,229,255,.10);
++      border:1px solid rgba(79,141,252,.24);
++      background:rgba(79,141,252,.10);
+       color:var(--neon-cyan);
+       margin-top:16px;
+       position:relative; z-index:1;
+     }
+ 
+     /* ======= Services ======= */
+     .service{cursor:pointer;}
+     .service-icon{
+       width:78px;height:78px;
+       background:var(--grad-neon-2);
+       border-radius:18px;
+       display:flex;align-items:center;justify-content:center;
+-      font-size:34px;margin-bottom:22px;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 18px 44px rgba(0,229,255,.10);
++      font-size:16px;
++      font-weight:900;
++      letter-spacing:1px;
++      text-transform:uppercase;
++      margin-bottom:22px;
++      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 18px 44px rgba(79,141,252,.10);
+       position:relative; z-index:1;
+     }
+     .service-footer{
+       margin-top:20px;
+       padding-top:20px;
+       border-top:1px solid rgba(255,255,255,.10);
+       display:flex;gap:10px;flex-wrap:wrap;
+       position:relative; z-index:1;
+     }
+     .btn-sm{
+       font-size:13px;
+       padding:10px 18px;
+       border-radius:999px;
+       font-weight:900;
+       display:inline-flex;
+       align-items:center;gap:8px;
+       transition:.25s;
+       border:1px solid rgba(255,255,255,.14);
+       background:rgba(255,255,255,.06);
+       cursor:pointer;
+       position:relative;
+       overflow:hidden;
+     }
+     .btn-sm:hover{
+       transform:translateY(-2px);
+-      box-shadow:0 16px 40px rgba(0,229,255,.10);
+-      border-color:rgba(0,229,255,.28);
++      box-shadow:0 16px 40px rgba(79,141,252,.10);
++      border-color:rgba(79,141,252,.28);
+     }
+     .btn-sm.messenger-btn{
+-      background:rgba(0,132,255,.16);
+-      border-color:rgba(0,132,255,.34);
++      background:rgba(79,141,252,.16);
++      border-color:rgba(79,141,252,.34);
+       color:#75b8ff;
+     }
+ 
+     /* ======= Publications ======= */
+     .publications-grid{display:grid;gap:20px;}
+     .publication-item{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:20px;
+       overflow:hidden;
+       transition:.25s;
+       position:relative;
+     }
+     .publication-item:hover{
+-      border-color:rgba(0,229,255,.30);
+-      box-shadow:0 18px 45px rgba(0,229,255,.10);
++      border-color:rgba(79,141,252,.30);
++      box-shadow:0 18px 45px rgba(79,141,252,.10);
+     }
+     .pub-main{
+       padding:28px;
+       display:grid;
+       grid-template-columns:auto 1fr auto;
+       gap:20px;
+       align-items:start;
+     }
+     .pub-icon{
+       width:60px;height:60px;
+       background:var(--grad-neon-2);
+       border-radius:14px;
+       display:flex;align-items:center;justify-content:center;
+-      font-size:28px;
++      font-size:12px;
++      font-weight:900;
++      letter-spacing:1px;
++      text-transform:uppercase;
+       flex-shrink:0;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 16px 40px rgba(255,43,214,.08);
++      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 16px 40px rgba(79,141,252,.08);
+     }
+     .pub-content h4{
+       font-size:18px;
+       font-weight:900;
+       color:var(--text);
+       line-height:1.5;
+       margin-bottom:10px;
+     }
+     .pub-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+     .pub-badge{
+       font-size:11px;
+       padding:5px 12px;border-radius:999px;
+-      background:rgba(0,229,255,.10);
+-      border:1px solid rgba(0,229,255,.22);
++      background:rgba(79,141,252,.10);
++      border:1px solid rgba(79,141,252,.22);
+       color:var(--neon-cyan);
+       font-weight:900;
+     }
+     .pub-link{
+       color:var(--neon-cyan);
+       font-size:13px;
+       font-weight:800;
+       display:inline-flex;align-items:center;gap:6px;
+       margin-top:8px;
+       transition:.2s;
+     }
+     .pub-link:hover{opacity:.85;}
+     .pub-toggle{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.14);
+       color:var(--text);
+       padding:10px 16px;
+       border-radius:12px;
+       cursor:pointer;
+       font-weight:1000;
+       font-size:13px;
+       display:flex;
+       align-items:center;gap:8px;
+       transition:.25s;
+       height:fit-content;
+     }
+     .pub-toggle:hover{
+-      background:rgba(255,43,214,.10);
+-      border-color:rgba(255,43,214,.26);
+-      box-shadow:0 14px 30px rgba(255,43,214,.08);
++      background:rgba(79,141,252,.10);
++      border-color:rgba(79,141,252,.26);
++      box-shadow:0 14px 30px rgba(79,141,252,.08);
+     }
+     .pub-toggle .arrow{transition:.25s;font-size:16px;}
+     .pub-toggle.active .arrow{transform:rotate(180deg);}
+     .pub-abstract{
+       max-height:0; overflow:hidden;
+       transition:.35s ease;
+       border-top:1px solid rgba(255,255,255,.10);
+     }
+     .pub-abstract.open{max-height:900px;}
+     .pub-abstract-content{
+       padding:24px 28px;
+-      background:linear-gradient(135deg, rgba(0,229,255,.06), rgba(255,43,214,.04));
++      background:linear-gradient(135deg, rgba(79,141,252,.06), rgba(79,141,252,.04));
+     }
+     .pub-abstract h5{
+       color:var(--neon-cyan);
+       font-size:14px;
+       font-weight:1000;
+       margin-bottom:12px;
+       text-transform:uppercase;
+       letter-spacing:.5px;
+     }
+     .pub-abstract p{
+       color:var(--text-secondary);
+       line-height:1.8;
+       font-size:14px;
+     }
+ 
+     /* ======= Testimonials ======= */
+     .testimonial-grid{
+       display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+       gap:24px;
+     }
+     .testimonial{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:20px;
+       padding:28px;
+       transition:.25s;
+       position:relative;
+       overflow:hidden;
+     }
+     .testimonial::before{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:radial-gradient(650px 160px at 20% 10%, rgba(0,229,255,.10), transparent 45%),
+-                 radial-gradient(650px 160px at 90% 90%, rgba(255,43,214,.08), transparent 48%);
++      background:radial-gradient(650px 160px at 20% 10%, rgba(79,141,252,.10), transparent 45%),
++                 radial-gradient(650px 160px at 90% 90%, rgba(79,141,252,.08), transparent 48%);
+       opacity:.75;
+       pointer-events:none;
+     }
+     .testimonial:hover{
+-      border-color:rgba(0,229,255,.28);
+-      box-shadow:0 18px 45px rgba(0,229,255,.10);
++      border-color:rgba(79,141,252,.28);
++      box-shadow:0 18px 45px rgba(79,141,252,.10);
+       transform:translateY(-4px);
+     }
+     .testimonial-header{display:flex;gap:14px;margin-bottom:18px;position:relative;z-index:1;}
+     .testimonial-avatar{
+       width:50px;height:50px;
+       background:var(--grad-neon-2);
+       border-radius:50%;
+       display:flex;align-items:center;justify-content:center;
+       font-size:22px;flex-shrink:0;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 14px 30px rgba(0,229,255,.10);
++      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 14px 30px rgba(79,141,252,.10);
+     }
+     .testimonial-info h4{font-size:16px;font-weight:1000;color:var(--text);margin-bottom:3px;}
+     .testimonial-info p{font-size:12px;color:var(--text-muted);}
+     .testimonial-text{
+       color:var(--text-secondary);
+       line-height:1.75;
+       font-size:14px;
+       font-style:italic;
+       position:relative;z-index:1;
+     }
+-    .stars{color:var(--neon-amber);font-size:16px;margin-top:14px;position:relative;z-index:1;}
++    .stars{
++      color:var(--neon-cyan);
++      font-size:13px;
++      font-weight:900;
++      letter-spacing:.6px;
++      margin-top:14px;
++      position:relative;
++      z-index:1;
++      text-transform:uppercase;
++    }
+ 
+     /* ======= Blog/Resources ======= */
+     .blog-grid{
+       display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+       gap:28px;
+     }
+     .blog-card{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:20px;
+       overflow:hidden;
+       transition:.25s;
+     }
+     .blog-card:hover{
+       transform:translateY(-6px);
+-      border-color:rgba(255,43,214,.26);
+-      box-shadow:0 22px 60px rgba(255,43,214,.10);
++      border-color:rgba(79,141,252,.26);
++      box-shadow:0 22px 60px rgba(79,141,252,.10);
+     }
+     .blog-image{
+       width:100%;
+       height:200px;
+       background:var(--grad-neon);
+       display:flex;
+       align-items:center;
+       justify-content:center;
+-      font-size:60px;
++      font-size:18px;
++      font-weight:900;
++      letter-spacing:1px;
++      text-transform:uppercase;
+       position:relative;
+       overflow:hidden;
+     }
+     .blog-image::after{
+       content:"";
+       position:absolute; inset:-2px;
+-      background:radial-gradient(700px 240px at 20% 20%, rgba(0,229,255,.30), transparent 55%);
++      background:radial-gradient(700px 240px at 20% 20%, rgba(79,141,252,.30), transparent 55%);
+       opacity:.7;
+     }
+     .blog-content{padding:24px;}
+     .blog-category{
+       font-size:11px;
+       font-weight:1000;
+       color:var(--neon-cyan);
+       text-transform:uppercase;
+       letter-spacing:.5px;
+       margin-bottom:10px;
+     }
+     .blog-card h3{font-size:18px;margin-bottom:12px;color:var(--text);font-weight:1000;}
+     .blog-card p{color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:16px;}
+     .blog-card .read-more{
+       color:var(--neon-cyan);
+       font-weight:900;
+       font-size:14px;
+       display:inline-flex;align-items:center;gap:6px;
+     }
+ 
+     /* ======= Timeline ======= */
+     .timeline{max-width:900px;margin:0 auto;position:relative;}
+     .timeline::before{
+       content:"";
+       position:absolute;left:20px;top:0;bottom:0;
+       width:2px;
+-      background:linear-gradient(to bottom, rgba(0,229,255,.35), rgba(255,43,214,.25));
++      background:linear-gradient(to bottom, rgba(79,141,252,.35), rgba(79,141,252,.25));
+     }
+     .timeline-item{display:flex;gap:20px;margin-bottom:40px;position:relative;}
+     .timeline-dot{
+       width:42px;height:42px;
+       background:var(--grad-neon);
+       border-radius:50%;
+       display:flex;align-items:center;justify-content:center;
+       font-weight:1100;font-size:18px;color:#061021;
+       flex-shrink:0;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 16px 40px rgba(0,229,255,.10);
++      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 16px 40px rgba(79,141,252,.10);
+       z-index:1;
+     }
+     .timeline-content{
+       flex:1;
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:18px;
+       padding:24px;
+       transition:.25s;
+       position:relative;
+       overflow:hidden;
+     }
+     .timeline-content:hover{
+-      border-color:rgba(0,229,255,.28);
++      border-color:rgba(79,141,252,.28);
+       background:rgba(255,255,255,.08);
+-      box-shadow:0 18px 45px rgba(0,229,255,.10);
++      box-shadow:0 18px 45px rgba(79,141,252,.10);
+       transform:translateY(-3px);
+     }
+     .timeline-content h3{
+       color:var(--neon-cyan);
+       font-size:20px;
+       margin-bottom:10px;
+       font-weight:1000;
+     }
+     .timeline-content p{color:var(--text-secondary);line-height:1.75;font-size:15px;}
+ 
+     /* ======= FAQ ======= */
+     details{
+       border:1px solid rgba(255,255,255,.12);
+       background:rgba(255,255,255,.06);
+       border-radius:18px;
+       padding:20px 24px;
+       margin-bottom:16px;
+       transition:.25s;
+     }
+-    details:hover{border-color:rgba(0,229,255,.26);}
++    details:hover{border-color:rgba(79,141,252,.26);}
+     details[open]{
+-      border-color:rgba(255,43,214,.26);
+-      box-shadow:0 18px 45px rgba(255,43,214,.08);
++      border-color:rgba(79,141,252,.26);
++      box-shadow:0 18px 45px rgba(79,141,252,.08);
+     }
+     summary{
+       cursor:pointer;
+       color:var(--neon-cyan);
+       font-weight:1000;
+       font-size:17px;
+       outline:none;
+       user-select:none;
+       display:flex;
+       align-items:center;
+       gap:12px;
+     }
+     summary::marker{content:"";}
+     summary::before{
+       content:"▶";
+       font-size:12px;
+       transition:.25s;
+       display:inline-block;
+       color:var(--neon-magenta);
+     }
+     details[open] summary::before{transform:rotate(90deg);}
+     details p{
+       margin-top:14px;
+       color:var(--text-secondary);
+       line-height:1.8;
+       font-size:15px;
+       padding-left:24px;
+     }
+ 
+     /* ======= Contact ======= */
+     .contact-grid{
+       display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+       gap:28px;
+     }
+     .contact-card{
+       background:rgba(255,255,255,.06);
+       border:1px solid rgba(255,255,255,.12);
+       border-radius:22px;
+       padding:36px;
+       text-align:center;
+       transition:.25s;
+       position:relative;
+       overflow:hidden;
+     }
+     .contact-card:hover{
+       transform:translateY(-6px);
+-      border-color:rgba(0,229,255,.28);
+-      box-shadow:0 22px 60px rgba(0,229,255,.10);
++      border-color:rgba(79,141,252,.28);
++      box-shadow:0 22px 60px rgba(79,141,252,.10);
+       background:rgba(255,255,255,.08);
+     }
+     .contact-icon{
+       width:75px;height:75px;
+       background:var(--grad-neon-2);
+       border-radius:50%;
+       display:flex;align-items:center;justify-content:center;
+-      font-size:36px;
++      font-size:12px;
++      font-weight:900;
++      letter-spacing:.8px;
++      text-transform:uppercase;
+       margin:0 auto 22px;
+-      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 18px 45px rgba(255,43,214,.08);
++      box-shadow:0 0 0 1px rgba(255,255,255,.10), 0 18px 45px rgba(79,141,252,.08);
+     }
+     .contact-card h3{font-size:22px;margin-bottom:14px;color:var(--text);font-weight:1100;}
+     .contact-card a{color:var(--neon-cyan);font-weight:900;word-break:break-word;font-size:15px;}
+     .copy-btn{
+       margin-top:18px;
+       padding:12px 24px;
+       background:var(--grad-neon);
+       color:#061021;
+       border:none;
+       border-radius:12px;
+       cursor:pointer;
+       font-weight:1100;
+       transition:.25s;
+       font-size:14px;
+-      box-shadow:0 16px 40px rgba(0,229,255,.10);
++      box-shadow:0 16px 40px rgba(79,141,252,.10);
+     }
+-    .copy-btn:hover{transform:translateY(-2px);box-shadow:0 22px 60px rgba(255,43,214,.10);}
++    .copy-btn:hover{transform:translateY(-2px);box-shadow:0 22px 60px rgba(79,141,252,.10);}
+ 
+     /* ======= Footer ======= */
+     footer{
+       padding:60px 8% 30px;
+       border-top:1px solid rgba(255,255,255,.12);
+       background:rgba(0,0,0,.22);
+       position:relative;
+       z-index:1;
+     }
+     body.light footer{background:rgba(255,255,255,.78);}
+     .footer-grid{
+       display:grid;
+       grid-template-columns:2fr 1fr 1fr 1fr;
+       gap:40px;
+       margin-bottom:40px;
+     }
+     .footer-col h3{
+       font-size:18px;
+       margin-bottom:16px;
+       font-weight:1100;
+       background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     .footer-col p{color:var(--text-secondary);font-size:14px;line-height:1.75;margin-bottom:10px;}
+     .footer-col ul{list-style:none;}
+     .footer-col ul li{margin-bottom:10px;}
+     .footer-col ul li a{
+       color:var(--text-secondary);
+       font-size:14px;
+       transition:.2s;
+     }
+     .footer-col ul li a:hover{color:var(--neon-cyan);}
+     .social-links{display:flex;gap:12px;margin-top:16px;}
+     .social-links a{
+       width:42px;height:42px;
+-      background:rgba(0,229,255,.12);
+-      border:1px solid rgba(0,229,255,.22);
++      background:rgba(79,141,252,.12);
++      border:1px solid rgba(79,141,252,.22);
+       border-radius:50%;
+       display:flex;align-items:center;justify-content:center;
+       font-size:20px;
+       transition:.25s;
+     }
+     .social-links a:hover{
+-      background:rgba(255,43,214,.12);
+-      border-color:rgba(255,43,214,.26);
++      background:rgba(79,141,252,.12);
++      border-color:rgba(79,141,252,.26);
+       transform:translateY(-3px);
+-      box-shadow:0 18px 45px rgba(255,43,214,.10);
++      box-shadow:0 18px 45px rgba(79,141,252,.10);
+     }
+     .copyright{
+       text-align:center;
+       padding-top:30px;
+       border-top:1px solid rgba(255,255,255,.12);
+       font-size:14px;
+       color:var(--text-muted);
+     }
+ 
+     /* ======= Floating Buttons ======= */
+     .whatsapp-float,.messenger-float{
+       position:fixed;
+       right:24px;
+       padding:16px 24px;
+       border-radius:999px;
+       font-weight:1100;
+       font-size:15px;
+       z-index:1200;
+       display:flex;
+       gap:10px;
+       align-items:center;
+       transition:.25s;
+       border:1px solid rgba(255,255,255,.12);
+       backdrop-filter: blur(14px);
+     }
+     .whatsapp-float{
+       bottom:24px;
+       background:rgba(37,211,102,.18);
+       color:white;
+       box-shadow:0 10px 34px rgba(37,211,102,.25);
+       border-color:rgba(37,211,102,.28);
+     }
+     .whatsapp-float:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(37,211,102,.32);}
+     .messenger-float{
+       bottom:90px;
+-      background:rgba(0,132,255,.18);
++      background:rgba(79,141,252,.18);
+       color:white;
+-      box-shadow:0 10px 34px rgba(0,132,255,.25);
+-      border-color:rgba(0,132,255,.28);
++      box-shadow:0 10px 34px rgba(79,141,252,.25);
++      border-color:rgba(79,141,252,.28);
+     }
+-    .messenger-float:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,132,255,.32);}
++    .messenger-float:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(79,141,252,.32);}
+ 
+     /* ======= Toast ======= */
+     .toast{
+       position:fixed;
+       left:50%;
+       bottom:30px;
+       transform:translateX(-50%);
+       background:rgba(5,6,16,.86);
+       color:white;
+       border:1px solid rgba(255,255,255,.18);
+       padding:14px 28px;
+       border-radius:999px;
+       font-weight:1000;
+       font-size:14px;
+       opacity:0;
+       pointer-events:none;
+       transition:.25s;
+       z-index:2000;
+       box-shadow:var(--shadow-lg);
+     }
+     body.light .toast{background:rgba(255,255,255,.94);color:var(--text);}
+     .toast.show{opacity:1;bottom:40px;}
+ 
+     /* ======= Modal ======= */
+     .modal-back{
+@@ -1082,51 +1134,51 @@
+       backdrop-filter:blur(8px);
+       display:none;
+       align-items:center;
+       justify-content:center;
+       z-index:3000;
+       padding:20px;
+     }
+     .modal{
+       width:min(720px,96vw);
+       max-height:90vh;
+       background:rgba(7,10,24,.92);
+       border:1px solid rgba(255,255,255,.18);
+       border-radius:26px;
+       box-shadow:0 30px 90px rgba(0,0,0,.70);
+       overflow:hidden;
+       display:flex;
+       flex-direction:column;
+     }
+     body.light .modal{background:rgba(255,255,255,.96);}
+     .modal-head{
+       padding:24px 28px;
+       display:flex;
+       align-items:center;
+       justify-content:space-between;
+       border-bottom:1px solid rgba(255,255,255,.12);
+-      background:linear-gradient(135deg, rgba(0,229,255,.14), rgba(255,43,214,.10));
++      background:linear-gradient(135deg, rgba(79,141,252,.14), rgba(79,141,252,.10));
+       flex-shrink:0;
+     }
+     .modal-head strong{
+       font-size:20px;
+       font-weight:1100;
+       background:linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     .modal-close{
+       cursor:pointer;
+       border:1px solid rgba(255,255,255,.14);
+       background:rgba(255,255,255,.06);
+       color:var(--text);
+       padding:10px 14px;
+       border-radius:12px;
+       font-weight:1100;
+       font-size:18px;
+       transition:.2s;
+     }
+     .modal-close:hover{
+       background:rgba(255,0,0,.20);
+       border-color:rgba(255,0,0,.35);
+       transform:translateY(-1px);
+@@ -1155,1121 +1207,1142 @@
+ 
+     /* ======= Page top utility ======= */
+     .page-top{
+       padding:0 8%;
+       margin-top:16px;
+       margin-bottom:-50px;
+     }
+     .crumb{
+       display:flex;
+       gap:10px;
+       flex-wrap:wrap;
+       align-items:center;
+       color:var(--text-muted);
+       font-weight:800;
+       font-size:13px;
+     }
+     .crumb b{
+       color:var(--neon-cyan);
+       font-weight:1100;
+     }
+ 
+     /* ======= Reveal (kept) ======= */
+     .reveal{opacity:0;transform:translateY(18px);transition:.65s ease;}
+     .reveal.show{opacity:1;transform:none;}
+ 
++    @media (prefers-reduced-motion: reduce){
++      *, *::before, *::after{
++        animation-duration:0.01ms !important;
++        animation-iteration-count:1 !important;
++        transition-duration:0.01ms !important;
++        scroll-behavior:auto !important;
++      }
++    }
++
+     /* ======= Responsive ======= */
+     @media (max-width:1024px){
+       .footer-grid{grid-template-columns:1fr 1fr;}
+     }
+     @media (max-width:980px){
+       h1{font-size:40px;}
+       h2{font-size:34px;}
+       .section-header h2{font-size:36px;}
+       .hero-grid{grid-template-columns:1fr;gap:40px;}
+ 
+       nav{
+-        display:none;
++        display:flex;
+         position:absolute;
+         left:8%;
+         right:8%;
+         top:72px;
+         background:rgba(255,255,255,.08);
+         border:1px solid rgba(255,255,255,.16);
+         border-radius:18px;
+         padding:18px;
+         flex-direction:column;
+         align-items:flex-start;
+         box-shadow:var(--shadow-lg);
+         backdrop-filter: blur(16px);
++        opacity:0;
++        visibility:hidden;
++        transform:translateY(-8px);
++        pointer-events:none;
++        transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
++        z-index:10;
++      }
++      nav.open{
++        opacity:1;
++        visibility:visible;
++        transform:translateY(0);
++        pointer-events:auto;
+       }
+-      nav.open{display:flex;}
+       nav a{width:100%;padding:14px;}
+       .menu-btn{display:inline-flex;}
+       .cards-4,.cards-3{grid-template-columns:repeat(2,1fr);}
+       section{padding:70px 6%;}
+       .timeline::before{left:20px;}
+       .footer-grid{grid-template-columns:1fr;}
+     }
+     @media (max-width:640px){
+       h1{font-size:34px;}
+       .navwrap{padding:14px 6%;}
+       .brand span{display:none;}
+       .logo-area{min-width:auto;}
+       .cards-4,.cards-3,.cards-2{grid-template-columns:1fr;}
+       .btn{width:100%;justify-content:center;}
+       .btnrow{gap:12px;}
+       .mini-grid{grid-template-columns:1fr;}
+       .stats-grid{grid-template-columns:1fr 1fr;gap:24px;}
+       .pub-main{grid-template-columns:1fr;gap:16px;}
+       .pub-toggle{width:100%;justify-content:center;}
+       .whatsapp-float,.messenger-float{right:16px;padding:14px 20px;}
+       .messenger-float{bottom:80px;}
+     }
+   </style>
+ </head>
+ 
+ <body>
+   <div class="fx" aria-hidden="true"></div>
+ 
+   <!-- Header -->
+   <header>
+     <div class="navwrap">
+       <div class="logo-area">
+         <div class="logo-box" id="logoBox" style="background-image:url('logo.jpg')">G</div>
+         <div class="brand">
+           <strong>GARP</strong>
+           <span>Global Academy for Research and Publication</span>
+         </div>
+       </div>
+ 
+       <!-- Virtual page routes -->
+       <nav id="nav">
+         <a href="#/home" data-route="home">Home</a>
+         <a href="#/about" data-route="about">About</a>
+         <a href="#/services" data-route="services">Services</a>
+-        <a href="#/publications" data-route="publications">Publications</a>
+-        <a href="#/testimonials" data-route="testimonials">Success Stories</a>
+         <a href="#/resources" data-route="resources">Resources</a>
+-        <a href="#/process" data-route="process">Process</a>
+-        <a href="#/faq" data-route="faq">FAQ</a>
+         <a href="#/contact" data-route="contact">Contact</a>
+       </nav>
+ 
+       <div class="nav-actions">
+         <button class="iconbtn menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+         <button class="iconbtn" id="themeBtn" title="Toggle Dark/Light Mode" aria-label="Theme Toggle">🌙</button>
+       </div>
+     </div>
+   </header>
+ 
+   <main class="app" id="app">
+ 
+     <!-- ======================
+          HOME PAGE
+          ====================== -->
+     <div class="page active" id="page-home" data-page="home">
+       <section class="hero">
+         <div class="container hero-grid">
+           <div class="reveal">
+-            <span class="kicker">⚡ Neon Tech Research • 🌍 Global Publications • 🧠 Expert Mentorship</span>
++            <span class="kicker">Global Research Mentorship • Publication Strategy • Scholar Network</span>
+             <h1>Transform Your Research Into Global Publications</h1>
+-            <p class="subtitle">From Concept to Publication: Your Complete Research Journey</p>
++            <p class="subtitle">A structured path from concept to journal-ready submission</p>
+             <p>
+               GARP is a research mentorship platform providing end-to-end support—from thesis development to Q1–Q4
+               journal publications and international conference proceedings. Join thousands of researchers achieving
+               their academic goals with expert guidance.
+             </p>
+             <div class="btnrow">
+-              <a href="https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t" class="btn primary" target="_blank" rel="noopener">
+-                📲 Join WhatsApp Community
++              <a href="#/contact" class="btn primary">
++                Schedule a Consultation
+               </a>
+-              <a href="https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846" class="btn messenger" target="_blank" rel="noopener">
+-                💬 Message on Messenger
++              <a href="https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t" class="btn secondary" target="_blank" rel="noopener">
++                Join WhatsApp Community
+               </a>
+-              <a href="#/services" class="btn">
+-                🔍 Explore Services
++              <a href="#/services" class="btn ghost">
++                Explore Services
+               </a>
+             </div>
+           </div>
+ 
+           <div class="hero-card reveal" data-tilt>
+-            <strong style="color:var(--neon-cyan);font-size:18px;position:relative;z-index:2;font-weight:1100">📊 Why Choose GARP</strong>
++            <strong style="color:var(--neon-cyan);font-size:18px;position:relative;z-index:2;font-weight:1100">Why Choose GARP</strong>
+             <div class="mini-grid">
+               <div class="pill">
+                 <strong>500+</strong>
+                 <span>Successful publications</span>
+               </div>
+               <div class="pill">
+                 <strong>Q1–Q4</strong>
+                 <span>All journal quartiles</span>
+               </div>
+               <div class="pill">
+                 <strong>24/7</strong>
+                 <span>Community support</span>
+               </div>
+               <div class="pill">
+                 <strong>Global</strong>
+                 <span>International reach</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       <section class="stats-section">
+         <div class="container">
+           <div class="stats-grid reveal">
+             <div class="stat-item">
+               <h3>2000+</h3>
+               <p>Active Researchers</p>
+             </div>
+             <div class="stat-item">
+               <h3>500+</h3>
+               <p>Published Papers</p>
+             </div>
+             <div class="stat-item">
+               <h3>50+</h3>
+               <p>Expert Mentors</p>
+             </div>
+             <div class="stat-item">
+               <h3>30+</h3>
+               <p>Countries Served</p>
+             </div>
+             <div class="stat-item">
+               <h3>95%</h3>
+               <p>Success Rate</p>
+             </div>
+           </div>
++          <div class="trust-strip reveal">
++            <div class="trust-badge">Outcomes tracked via verified acceptance letters</div>
++            <div class="trust-badge">Mentor network across 30+ countries</div>
++            <div class="trust-badge">Quality checks aligned with IEEE/APA/Elsevier formats</div>
++          </div>
+         </div>
+       </section>
+ 
+       <!-- Home quick navigation cards -->
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Start Faster</h2>
+-            <p>Jump directly to what you need—no long scroll. Neon-speed navigation, single-file setup.</p>
++            <p>Jump directly to what you need—no long scroll. Fast navigation, single-file setup.</p>
+           </div>
+           <div class="grid cards-4">
+             <a class="card" href="#/services" data-tilt>
+-              <h3>🧩 Services</h3>
++              <h3>Services</h3>
+               <p>Thesis, journals, conferences, tools training, collaboration—explore all offerings.</p>
+               <span class="badge">Go to Services</span>
+             </a>
+             <a class="card" href="#/publications" data-tilt>
+-              <h3>📚 Publications</h3>
++              <h3>Publications</h3>
+               <p>See successful outputs and portfolio highlights from the community.</p>
+               <span class="badge">Go to Publications</span>
+             </a>
+             <a class="card" href="#/process" data-tilt>
+-              <h3>🗺️ Roadmap</h3>
++              <h3>Roadmap</h3>
+               <p>Follow a proven research workflow from idea to acceptance.</p>
+               <span class="badge">Go to Process</span>
+             </a>
+             <a class="card" href="#/contact" data-tilt>
+-              <h3>⚡ Contact</h3>
++              <h3>Contact</h3>
+               <p>Start now—WhatsApp, Messenger, email. Fast support for researchers.</p>
+               <span class="badge">Go to Contact</span>
+             </a>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          ABOUT PAGE
+          ====================== -->
+     <div class="page" id="page-about" data-page="about">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>About</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>About GARP</h2>
+             <p>Building a global community of research scholars and academic professionals.</p>
+           </div>
+ 
+           <div class="grid cards-3">
+             <div class="card" data-tilt>
+-              <h3>🎯 Our Mission</h3>
++              <h3>Our Mission</h3>
+               <p>
+                 Democratize access to quality research guidance and publication support, enabling scholars worldwide to
+                 contribute to global knowledge through rigorous, impactful research.
+               </p>
+-              <span class="badge">✅ Global Impact</span>
++              <span class="badge">Global Impact</span>
+             </div>
+ 
+             <div class="card" data-tilt>
+-              <h3>💡 Our Approach</h3>
++              <h3>Our Approach</h3>
+               <p>
+                 Expert mentorship, structured workflows, practical tools training, and end-to-end publication support—
+                 designed to help researchers succeed faster.
+               </p>
+-              <span class="badge">✅ Proven Methods</span>
++              <span class="badge">Proven Methods</span>
+             </div>
+ 
+             <div class="card" data-tilt>
+-              <h3>🌟 Our Vision</h3>
++              <h3>Our Vision</h3>
+               <p>
+                 Become the most trusted research mentorship platform, fostering excellence in academic writing and enabling
+                 breakthrough discoveries across disciplines.
+               </p>
+-              <span class="badge">✅ Future-Focused</span>
++              <span class="badge">Future-Focused</span>
+             </div>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          SERVICES PAGE
+          ====================== -->
+     <div class="page" id="page-services" data-page="services">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Services</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Comprehensive Research Services</h2>
+             <p>End-to-end support for every stage of your research journey.</p>
+           </div>
+ 
+           <div class="grid cards-4">
+             <div class="card service" data-tilt
+               data-title="Thesis & Dissertation Excellence"
+               data-items="Complete thesis structure and planning|Professional formatting (IEEE/APA/MLA/Chicago)|Comprehensive proofreading and editing|Academic writing quality enhancement|Plagiarism detection and avoidance|Literature review development|Methodology consultation|Statistical analysis guidance|Final revision and submission preparation|Defense presentation support">
+-              <div class="service-icon">📝</div>
++              <div class="service-icon">TD</div>
+               <h3>Thesis & Dissertation</h3>
+               <p>Complete thesis support from structure planning to final defense preparation with expert guidance.</p>
+               <div class="service-footer">
+                 <span class="badge">Professional Quality</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Thesis & Dissertation" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Free Research Mentorship Program"
+               data-items="Personalized research roadmap development|Topic selection and refinement guidance|Weekly one-on-one mentor sessions|Research methodology consultation|Literature review strategies|Writing skills development|Critical thinking enhancement|Progress tracking and feedback|Academic networking opportunities|Career guidance and planning">
+-              <div class="service-icon">🤝</div>
++              <div class="service-icon">FM</div>
+               <h3>Free Mentorship</h3>
+               <p>Dedicated mentorship for beginners with personalized guidance from experienced researchers.</p>
+               <div class="service-footer">
+                 <span class="badge">100% Free</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Free Mentorship" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Journal Publication Support (Q1-Q4)"
+               data-items="High-impact Q1/Q2 journal targeting|Q3/Q4 strategic publishing support|Journal selection and ranking analysis|Manuscript preparation and formatting|Cover letter and highlights writing|Submission process management|Peer review response strategy|Revision and resubmission guidance|Acceptance rate optimization|Post-publication promotion">
+-              <div class="service-icon">📑</div>
++              <div class="service-icon">JP</div>
+               <h3>Journal Publication</h3>
+               <p>Support for publishing in all quartile journals with strategies to improve acceptance.</p>
+               <div class="service-footer">
+                 <span class="badge">Scopus • WoS • PubMed</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Journal Publication" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="International Conference Support"
+               data-items="Conference selection and evaluation|Abstract submission guidance|Full paper preparation|Template formatting (IEEE/Springer/ACM)|Presentation slide development|Poster design and layout|Oral presentation coaching|Camera-ready version preparation|Registration assistance|Travel and accommodation planning">
+-              <div class="service-icon">🎤</div>
++              <div class="service-icon">CP</div>
+               <h3>Conference Papers</h3>
+               <p>Guidance for prestigious international conferences and published proceedings.</p>
+               <div class="service-footer">
+                 <span class="badge">IEEE • Springer • ACM</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Conference Papers" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Systematic Literature Review"
+               data-items="Research question formulation|Database search strategy (Scholar/IEEE/Scopus)|Boolean operator optimization|PRISMA methodology implementation|Paper screening and selection|Quality assessment criteria|Data extraction and synthesis|Gap identification and analysis|Citation network analysis|Meta-analysis support">
+-              <div class="service-icon">🔍</div>
++              <div class="service-icon">LR</div>
+               <h3>Literature Review</h3>
+               <p>Systematic review methodologies and gap identification using proven frameworks.</p>
+               <div class="service-footer">
+                 <span class="badge">Evidence-Based</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Literature Review" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Statement of Purpose & Higher Studies"
+               data-items="SOP structure and storytelling|Personal statement development|Research proposal writing|CV/Resume optimization|Letter of recommendation strategy|University program selection|Scholarship application support|RA/TA position guidance|Visa documentation assistance|Interview preparation">
+-              <div class="service-icon">✍️</div>
++              <div class="service-icon">SA</div>
+               <h3>SOP & Admissions</h3>
+               <p>Applications for graduate programs, scholarships, and research positions worldwide.</p>
+               <div class="service-footer">
+                 <span class="badge">Global Universities</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="SOP & Admissions" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Research Tools & Software Training"
+               data-items="Zotero/Mendeley reference management|EndNote library organization|LaTeX/Overleaf typesetting|Microsoft Word advanced features|SPSS statistical analysis|R programming for research|Python data analysis|MATLAB simulation|Grammarly writing enhancement|Turnitin plagiarism checking">
+-              <div class="service-icon">🧰</div>
++              <div class="service-icon">TT</div>
+               <h3>Tools Training</h3>
+               <p>Hands-on training for citation managers and data analysis software.</p>
+               <div class="service-footer">
+                 <span class="badge">Practical Skills</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Tools Training" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+ 
+             <div class="card service" data-tilt
+               data-title="Research Collaboration Network"
+               data-items="Active research project participation|Co-authorship opportunities|Interdisciplinary collaboration|Research team formation|Grant proposal development|Industry partnership connections|International collaboration facilitation|Academic networking events|Peer review exchange program|Research impact measurement">
+-              <div class="service-icon">🌍</div>
++              <div class="service-icon">CH</div>
+               <h3>Collaboration Hub</h3>
+               <p>Connect worldwide, join projects, find co-authors, and build your research network.</p>
+               <div class="service-footer">
+                 <span class="badge">Global Network</span>
+-                <button class="btn-sm messenger-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Send Message</button>
++                <a class="btn-sm messenger-btn messenger-link" data-service="Collaboration Hub" href="https://m.me/61583064699841" target="_blank" rel="noopener">Message on Messenger</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          PUBLICATIONS PAGE
+          ====================== -->
+     <div class="page" id="page-publications" data-page="publications">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Publications</b> • <a href="#/home">Home</a></div>
+       </div>
+ 
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Our Publications Portfolio</h2>
+             <p>Recent successful publications from our research community</p>
+           </div>
+ 
+           <div class="publications-grid">
+ 
+             <!-- 1 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">📚</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">IEEE</span>
+                     <span class="pub-badge">ICTP</span>
+                     <span class="pub-badge">2023</span>
+                   </div>
+                   <h4>Eye-Shaped Labyrinth Metamaterial Absorber For C, X, Ku &amp; K-Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Sayed Mahmud, Saif Hannan, Omar Faruk, Md Ibrahim, Md Aslam Hossain
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This paper presents an eye-shaped labyrinth metamaterial absorber engineered to achieve high absorption at multiple resonances across C, X, Ku, and K bands.
+                     A compact unit-cell on a grounded dielectric platform is optimized through parametric tuning to control resonant current paths and impedance matching.
+                     The results indicate stable multiband absorption suitable for microwave systems such as radar, wireless links, and navigation-related applications.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 2 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧲</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Journal</span>
+                     <span class="pub-badge">Heliyon</span>
+                     <span class="pub-badge">Elsevier</span>
+                     <span class="pub-badge">2024</span>
+                   </div>
+                   <h4>Polarization-Selective Metamaterial Absorber Using Tailored Y-Shaped SRR for UWB Device and Doppler Navigation Aids Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Sayed Mahmud, Apurba Ray Chowdhury, Saif Hannan, Mohammad Tariqul Islam, Ahmed S. Alshammari, Mohamed S. Soliman
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This study proposes a Y-shaped split-ring resonator (SRR) metamaterial absorber that exhibits polarization-selective absorption behavior for targeted microwave bands.
+                     The absorber is designed by tailoring resonator geometry to control coupling and create distinct resonant modes under different incident polarizations.
+                     The design supports UWB device environments and frequency regions relevant to Doppler navigation aids, enabling compact and application-oriented electromagnetic absorption.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 3 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">📡</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">IEEE</span>
+                     <span class="pub-badge">ICISET</span>
+                     <span class="pub-badge">2024</span>
+                   </div>
+                   <h4>Tetrahedral Molecular Shaped Metamaterial Absorber for Ku and K Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Mohammad Abrar Nasif, Sayed Mahamud Sijan, Abdullah Al Hossain Newaz, Debesh Barua Samudra, Shubho Ray Chowdhury
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A tetrahedral molecular-inspired metamaterial absorber is introduced to achieve strong absorption in Ku and K bands.
+                     The resonator geometry is optimized to create multiple absorption peaks via controlled inductive-capacitive coupling on a grounded substrate.
+                     Simulation analysis demonstrates high absorptivity at targeted bands, supporting high-frequency wireless, radar, and microwave device integration.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 4 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🌀</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">IEEE</span>
+                     <span class="pub-badge">ICISET</span>
+                     <span class="pub-badge">2024</span>
+                   </div>
+                   <h4>Fan Grill Shaped Circular Split-ring Loaded Metamaterial Absorber For X, Ku &amp; K Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Kazi Md Maharaz Hossain, Saif Hannan, Mohammd Mohi Uddin, Md Forhad, Sayed Mahamud Sijan, Md Ismail Hossen
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This paper presents a fan-grill shaped circular split-ring resonator (SRR) metamaterial absorber designed for multiband absorption across X, Ku, and K bands.
+                     The structure is tuned to excite multiple resonant modes by adjusting ring gaps and coupling paths with the grounded substrate.
+                     The resulting absorber is suitable for compact RF platforms requiring multi-band electromagnetic attenuation and improved spectral coverage.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 5 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🛡️</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">IEEE</span>
+                     <span class="pub-badge">ICISET</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">3.5 GHz</span>
+                   </div>
+                   <h4>S-Shape Polarization Insensitive Metamaterial Absorber for SAR Reduction at 3.5 GHz</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Shubho Ray Chowdhury, Apurba Ray Chowdhury, Saif Hannan, Md Mohsin Khan, Debesh Barua Samudra, Sayed Mahmud, Md Mujahid Hossain
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     An S-shaped metamaterial absorber is proposed to achieve polarization-insensitive absorption near 3.5 GHz for SAR reduction in wireless devices.
+                     The symmetric design aims to maintain consistent absorption response under polarization variation and practical incidence conditions.
+                     Performance evaluation indicates strong absorption around the target band, supporting integration in 5G-related platforms to reduce unwanted electromagnetic exposure.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 6 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🛰️</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Journal</span>
+                     <span class="pub-badge">AEU</span>
+                     <span class="pub-badge">Urban &amp; Fischer</span>
+                     <span class="pub-badge">2025</span>
+                   </div>
+                   <h4>Spiral Coil Shaped Multi-resonance Metamaterial Absorber for Wireless Communication and Satellite Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Mohammed Faysal, Sayed Mahmud, Shubho Ray Chowdhury, Apurba Ray Chowdhury
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This article introduces a compact spiral-coil metamaterial absorber designed to generate multiple resonant absorption bands for wireless and satellite applications.
+                     The spiral geometry increases effective current path length and coupling diversity, enabling multi-resonance behavior within a small footprint.
+                     The absorber provides practical EMI mitigation and absorption performance beneficial for antenna environments and multi-band RF systems.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 7 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">📶</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">NGC IoT &amp; ML</span>
+                     <span class="pub-badge">2023</span>
+                   </div>
+                   <h4>Split-Ring Enclosed K-shaped Rotational Symmetric Metamaterial Absorber for Multiband Wireless Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MK Uddin, S Hannan, S Hossen, A Gafur, SZ Rashid, MJ Uddin, et al.
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A K-shaped rotationally symmetric metamaterial absorber enclosed by split-ring elements is proposed for multiband wireless absorption.
+                     The design leverages symmetry to support stable absorption behavior while introducing multiple resonant modes through controlled coupling.
+                     The absorber is intended for compact microwave systems where multiband attenuation and reduced reflections are required.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 8 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🔥</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">NGC IoT &amp; ML</span>
+                     <span class="pub-badge">2023</span>
+                     <span class="pub-badge">C/X Band</span>
+                   </div>
+                   <h4>Gas Stove Burner Shape with Inductive Tailed Rotational Symmetric Metamaterial Absorber for C and X Band Application</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: AR Chowdhury, S Hannan, MK Uddin, MEH Bhuiyan, MI Hoque, MT Islam
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This work presents a burner-inspired rotationally symmetric metamaterial absorber enhanced by inductive tail features for C and X band operation.
+                     The geometry is tuned to excite resonant absorption while maintaining compact size for practical RF integration.
+                     The absorber supports applications in wireless communication components and electromagnetic compatibility where targeted attenuation is needed.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 9 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧩</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Journal</span>
+                     <span class="pub-badge">Alexandria Eng. J.</span>
+                     <span class="pub-badge">2024</span>
+                   </div>
+                   <h4>Maze-enclosed Quad Symmetric Kite Shaped SRR Based Metamaterial Absorber for Doppler Navigation Aids and Earth Exploration Satellite Remote Sensing Services</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: AR Chowdhury, S Hannan, MT Islam, S Alamri, AS Alshammari, et al.
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A quad-symmetric kite-shaped SRR metamaterial absorber enclosed by a maze-like boundary is proposed to achieve multi-band absorption with improved resonance control.
+                     The design targets frequency regions associated with Doppler navigation aids and earth-exploration satellite remote sensing services.
+                     Numerical analysis demonstrates multi-resonant absorption behavior and suitability for compact RF platforms requiring reduced reflection and enhanced electromagnetic attenuation.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 10 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🏗️</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">Adv. in EEE</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">5G/X Band</span>
+                   </div>
+                   <h4>Circular Split SRR Cornered by Staircase Shaped Metamaterial Absorber for 5G and X Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MI Hossen, AR Chowdhury, S Hannan, MM Hossain, MAR Bhuiyan
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This paper proposes a circular split-ring resonator absorber augmented with staircase-shaped corner features for 5G and X band absorption.
+                     The staircase geometry is used to tune coupling and resonance formation, improving absorption at targeted frequencies while keeping the structure compact.
+                     The design is suitable for RF device environments, antenna integration, and interference mitigation in modern wireless systems.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 11 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">✈️</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">IEEE</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">Radionavigation</span>
+                   </div>
+                   <h4>Rotational Symmetric Circular Split-Ring with Inductive Tail-Shaped Microwave Metamaterial Absorber for Aeronautical Radionavigation Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: SR Chowdhury, AR Chowdhury, T Islam, S Hossain, N Maimuna, et al.
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A rotationally symmetric circular split-ring absorber incorporating inductive tail features is proposed for microwave absorption in aeronautical radionavigation frequency regions.
+                     The inductive tails help form controllable resonant modes and improve impedance matching to enhance absorption performance.
+                     The absorber supports avionics and navigation system environments by reducing unwanted reflections and electromagnetic interference.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 12 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">❎</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">ICISET</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">C/X Band</span>
+                   </div>
+                   <h4>Quadruple X Shaped Rotational Symmetric Metamaterial Absorber for C and X Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MFA Chowdhury, AR Chowdhury, S Hannan, MJ Uddin, SR Chowdhury, et al.
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This work presents a quadruple X-shaped rotationally symmetric metamaterial absorber designed for efficient absorption in C and X bands.
+                     The symmetric configuration supports stable resonance behavior and helps reduce polarization sensitivity while enabling multiband absorption.
+                     The absorber is suitable for compact wireless and microwave systems requiring targeted attenuation and improved electromagnetic compatibility.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 13 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🟡</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">Quantum Photonics &amp; AI</span>
+                     <span class="pub-badge">2025</span>
+                     <span class="pub-badge">EMI Shielding</span>
+                   </div>
+                   <h4>Golden Snitch Shaped Dual Sided EM Metamaterial Absorber for EMI Shielding of 5G Backhaul Equipment</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: M Al Mamun, S Al Mahadi, SR Chowdhury, AR Chowdhury, M Faysal
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A dual-sided metamaterial absorber inspired by a “golden snitch” geometry is proposed to enhance EMI shielding effectiveness for 5G backhaul equipment.
+                     The dual-sided configuration increases resonance diversity and coupling, enabling improved absorption under practical operating conditions.
+                     The design targets high-frequency communication hardware where reducing interference and reflections is essential for stable system performance.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 14 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🅲</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">ICISET</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">Triple-Band</span>
+                   </div>
+                   <h4>Back to Back C Shaped Rotational Symmetric Metamaterial Absorber for Triple Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: AR Chowdhury, SK Nabil, S Hannan, MM Hossain, MF Alam, M Ibrahim
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This paper introduces a back-to-back C-shaped rotationally symmetric metamaterial absorber designed to achieve triple-band absorption.
+                     The geometry is optimized to generate three distinct resonant modes while maintaining compact size and stable absorption response.
+                     The absorber supports multiband RF applications where controlled reflection suppression and band-selective attenuation are required.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 15 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧱</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">ICEEIE</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">Ku/K Band</span>
+                   </div>
+                   <h4>Unveiling a Novel Square Resonator Labyrinth Shaped Metamaterial Absorber for Ku and K Band Applications</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MA Nasif, M Rahman, AAH Newaz, MF Ahmed, N Hasan
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A square resonator labyrinth metamaterial absorber is presented for Ku and K band operation with a compact grounded-substrate configuration.
+                     The labyrinth current paths and resonator coupling are optimized to create strong absorption resonances at targeted high-frequency bands.
+                     The design is suitable for high-frequency wireless, radar-related applications, and compact microwave device platforms.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 16 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧪</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Journal</span>
+                     <span class="pub-badge">Physica Scripta</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">THz</span>
+                   </div>
+                   <h4>Highly Sensitive Photonic Crystal Fiber Chemical Sensor for Detecting Carbon Disulfide and Bromoform in the THz Regime</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: Mohammad Abrar Nasif
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This work proposes a photonic crystal fiber (PCF) chemical sensor optimized for terahertz operation to detect carbon disulfide and bromoform.
+                     The sensor structure is engineered to enhance light–analyte interaction and improve sensitivity through effective index and field confinement design.
+                     Numerical analysis indicates strong sensitivity and feasibility for THz chemical monitoring and spectroscopy-oriented sensing applications.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 17 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧠</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">ICEEIE</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">AI/Medical</span>
+                   </div>
+                   <h4>Hybrid Feature Extraction Approach for Robust Brain Tumor Classification: HOG, GLCM, and Artificial Neural Network</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: N Hasan, MF Ahmed, MA Nasif, MR Haq, M Rahman
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This paper presents a hybrid feature extraction framework for brain tumor classification using HOG and GLCM descriptors combined with an artificial neural network.
+                     The method focuses on capturing complementary shape and texture information to improve robustness under imaging variability.
+                     Experimental evaluation indicates improved classification reliability compared to single-feature baselines, supporting practical computer-aided diagnosis pipelines.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 18 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">⚡</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Conference</span>
+                     <span class="pub-badge">Adv. in EEE</span>
+                     <span class="pub-badge">2024</span>
+                     <span class="pub-badge">THz</span>
+                   </div>
+                   <h4>Design and Analysis of a Vanadium Dioxide-Based Terahertz Absorber</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MA Nasif, AAH Newaz, N Hasan, MR Haq, MM Uddin, MNU Niloy
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     A vanadium dioxide (VO₂) based terahertz absorber is investigated to achieve strong absorption with tunable electromagnetic response.
+                     The design leverages VO₂ phase-transition behavior to modulate absorption characteristics and enable adaptive THz device functionality.
+                     Numerical analysis demonstrates effective absorption performance and potential for THz sensing, imaging, and reconfigurable absorber applications.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <!-- 19 -->
+             <div class="publication-item">
+               <div class="pub-main">
+-                <div class="pub-icon">🧯</div>
++                <div class="pub-icon">PUB</div>
+                 <div class="pub-content">
+                   <div class="pub-meta">
+                     <span class="pub-badge">Journal</span>
+                     <span class="pub-badge">EPJ Plus</span>
+                     <span class="pub-badge">2025</span>
+                     <span class="pub-badge">PCF Sensor</span>
+                   </div>
+                   <h4>Design and Analysis of a Photonic Crystal Fiber Sensor for Highly Toxic Gases Detection</h4>
+                   <p style="color:var(--text-muted);font-size:14px;margin-top:8px">
+                     Authors: MA Nasif, F Shahriyar, MM Hossain, A Gafur, R Hasan
+                   </p>
+-                  <a href="#" class="pub-link">🔗 View Publication →</a>
++                  <a href="#" class="pub-link">View Publication →</a>
+                 </div>
+                 <button class="pub-toggle" onclick="toggleAbstract(this)"><span>Abstract</span><span class="arrow">▼</span></button>
+               </div>
+               <div class="pub-abstract">
+                 <div class="pub-abstract-content">
+-                  <h5>📄 Abstract</h5>
++                  <h5>Abstract</h5>
+                   <p>
+                     This article proposes a photonic crystal fiber sensor optimized for detecting highly toxic gases through enhanced modal interaction with the analyte region.
+                     The design emphasizes sensitivity improvement via structural parameter optimization and effective refractive index engineering in the guided mode.
+                     Simulation results indicate strong sensing potential for environmental monitoring, industrial safety, and optical gas detection systems.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          TESTIMONIALS PAGE
+          ====================== -->
+     <div class="page" id="page-testimonials" data-page="testimonials">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Success Stories</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Success Stories</h2>
+             <p>What our researchers say about their experience with GARP</p>
+           </div>
+ 
+           <div class="testimonial-grid">
+             <div class="testimonial" data-tilt>
+               <div class="testimonial-header">
+                 <div class="testimonial-avatar">A</div>
+                 <div class="testimonial-info">
+                   <h4>Ahmed Rahman</h4>
+                   <p>PhD Candidate, Computer Science</p>
+                 </div>
+               </div>
+               <p class="testimonial-text">
+                 "GARP helped me publish my first Q1 journal paper. The mentorship was invaluable, and the structured
+                 approach made the entire process clear and achievable."
+               </p>
+-              <div class="stars">⭐⭐⭐⭐⭐</div>
++              <div class="stars">5.0 Rating</div>
+             </div>
+ 
+             <div class="testimonial" data-tilt>
+               <div class="testimonial-header">
+                 <div class="testimonial-avatar">S</div>
+                 <div class="testimonial-info">
+                   <h4>Sarah Chen</h4>
+                   <p>Master's Student, Biomedical Engineering</p>
+                 </div>
+               </div>
+               <p class="testimonial-text">
+                 "The thesis support was exceptional! My supervisor was impressed with the quality and structure.
+                 I got my work published in a Scopus-indexed conference thanks to GARP's guidance."
+               </p>
+-              <div class="stars">⭐⭐⭐⭐⭐</div>
++              <div class="stars">5.0 Rating</div>
+             </div>
+ 
+             <div class="testimonial" data-tilt>
+               <div class="testimonial-header">
+                 <div class="testimonial-avatar">M</div>
+                 <div class="testimonial-info">
+                   <h4>Muhammad Khan</h4>
+                   <p>Research Scholar, Renewable Energy</p>
+                 </div>
+               </div>
+               <p class="testimonial-text">
+                 "As a beginner, I was lost. GARP's free mentorship program gave me direction, confidence, and
+                 practical skills. Now I have 2 conference papers and 1 journal submission under review!"
+               </p>
+-              <div class="stars">⭐⭐⭐⭐⭐</div>
++              <div class="stars">5.0 Rating</div>
+             </div>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          RESOURCES PAGE
+          ====================== -->
+     <div class="page" id="page-resources" data-page="resources">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Resources</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Resources & Guides</h2>
+             <p>Free resources to help you succeed in your research journey</p>
+           </div>
+ 
+           <div class="blog-grid">
+             <div class="blog-card" data-tilt>
+-              <div class="blog-image">📖</div>
++              <div class="blog-image">Toolkit</div>
+               <div class="blog-content">
+                 <div class="blog-category">Guide</div>
+                 <h3>Complete Guide to Q1 Journal Publication</h3>
+                 <p>Step-by-step process for publishing in high-impact journals, from topic selection to acceptance.</p>
+                 <a href="#" class="read-more">Read More →</a>
+               </div>
+             </div>
+ 
+             <div class="blog-card" data-tilt>
+-              <div class="blog-image">🎯</div>
++              <div class="blog-image">Focus</div>
+               <div class="blog-content">
+                 <div class="blog-category">Tutorial</div>
+                 <h3>Mastering Literature Review with Zotero</h3>
+                 <p>Organize, annotate, and cite hundreds of papers efficiently using reference tools.</p>
+                 <a href="#" class="read-more">Read More →</a>
+               </div>
+             </div>
+ 
+             <div class="blog-card" data-tilt>
+-              <div class="blog-image">✍️</div>
++              <div class="blog-image">Guide</div>
+               <div class="blog-content">
+                 <div class="blog-category">Templates</div>
+                 <h3>Research Paper Templates Library</h3>
+                 <p>IEEE, Springer, Elsevier, ACM templates with examples and formatting guidelines.</p>
+                 <a href="#" class="read-more">Download →</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          PROCESS PAGE
+          ====================== -->
+     <div class="page" id="page-process" data-page="process">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Process</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Research Process Roadmap</h2>
+             <p>Your structured path from idea to publication success</p>
+           </div>
+@@ -2439,373 +2512,420 @@
+               <p>
+                 Pricing depends on scope and timeline. You can keep the ranges you already wrote, or replace with your current official pricing sheet.
+               </p>
+             </details>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+     <!-- ======================
+          CONTACT PAGE
+          ====================== -->
+     <div class="page" id="page-contact" data-page="contact">
+       <div class="page-top">
+         <div class="crumb">You are here: <b>Contact</b> • <a href="#/home">Home</a></div>
+       </div>
+       <section>
+         <div class="container reveal">
+           <div class="section-header">
+             <h2>Get In Touch</h2>
+             <p>Ready to start your research journey? We're here to help 24/7</p>
+           </div>
+ 
+           <div class="contact-grid">
+             <div class="contact-card" data-tilt>
+-              <div class="contact-icon">📧</div>
++              <div class="contact-icon">Email</div>
+               <h3>Email Us</h3>
+               <p style="margin-bottom:12px;color:var(--text-secondary);font-size:14px">For detailed inquiries and documentation</p>
+               <a href="mailto:garp.research.pub@gmail.com">garp.research.pub@gmail.com</a>
+-              <button class="copy-btn" onclick="copyText('garp.research.pub@gmail.com')">📋 Copy Email</button>
++              <button class="copy-btn" onclick="copyText('garp.research.pub@gmail.com')">Copy Email</button>
+             </div>
+ 
+             <div class="contact-card" data-tilt>
+-              <div class="contact-icon">💬</div>
++              <div class="contact-icon">Community</div>
+               <h3>WhatsApp Community</h3>
+               <p style="margin-bottom:12px;color:var(--text-secondary);font-size:14px">Join 2000+ active researchers</p>
+-              <a href="https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t" target="_blank" rel="noopener">Join Now →</a>
+-              <button class="copy-btn" onclick="copyText('https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t')">📋 Copy Link</button>
++              <a href="https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t" target="_blank" rel="noopener">Join Now →</a>
++              <button class="copy-btn" onclick="copyText('https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t')">Copy Link</button>
+             </div>
+ 
+             <div class="contact-card" data-tilt>
+-              <div class="contact-icon">💭</div>
++              <div class="contact-icon">Message</div>
+               <h3>Facebook Messenger</h3>
+               <p style="margin-bottom:12px;color:var(--text-secondary);font-size:14px">Quick responses and instant support</p>
+-              <a href="https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846" target="_blank" rel="noopener">Send Message →</a>
+-              <button class="copy-btn" onclick="window.open('https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846','_blank')">💬 Open Messenger</button>
++              <a class="messenger-link" data-service="General Inquiry" href="https://m.me/61583064699841" target="_blank" rel="noopener">Send Message →</a>
++              <button class="copy-btn messenger-link" data-service="General Inquiry" type="button">Open Messenger</button>
+             </div>
+ 
+             <div class="contact-card" data-tilt>
+-              <div class="contact-icon">📱</div>
++              <div class="contact-icon">Social</div>
+               <h3>Facebook Page</h3>
+               <p style="margin-bottom:12px;color:var(--text-secondary);font-size:14px">Updates, announcements, and resources</p>
+               <a href="https://www.facebook.com/profile.php?id=61583064699841" target="_blank" rel="noopener">Visit Page →</a>
+-              <button class="copy-btn" onclick="copyText('https://www.facebook.com/profile.php?id=61583064699841')">📋 Copy Link</button>
++              <button class="copy-btn" onclick="copyText('https://www.facebook.com/profile.php?id=61583064699841')">Copy Link</button>
+             </div>
+           </div>
+         </div>
+       </section>
+     </div>
+ 
+   </main>
+ 
+   <!-- Footer (persistent across pages) -->
+   <footer>
+     <div class="container">
+       <div class="footer-grid">
+         <div class="footer-col">
+           <h3>GARP</h3>
+           <p><strong>Global Academy for Research and Publication</strong></p>
+           <p>Empowering scholars worldwide with expert mentorship, comprehensive research support, and publication strategies.</p>
+           <div class="social-links">
+-            <a href="https://www.facebook.com/profile.php?id=61583064699841" target="_blank" rel="noopener" title="Facebook">📘</a>
+-            <a href="https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+-            <a href="mailto:garp.research.pub@gmail.com" title="Email">📧</a>
+-            <a href="#" target="_blank" rel="noopener" title="LinkedIn">🔗</a>
++            <a href="https://www.facebook.com/profile.php?id=61583064699841" target="_blank" rel="noopener" title="Facebook">FB</a>
++            <a href="https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t" target="_blank" rel="noopener" title="WhatsApp">WA</a>
++            <a href="mailto:garp.research.pub@gmail.com" title="Email">EM</a>
++            <a href="#" target="_blank" rel="noopener" title="LinkedIn">IN</a>
+           </div>
+         </div>
+ 
+         <div class="footer-col">
+           <h3>Services</h3>
+           <ul>
+             <li><a href="#/services">Thesis Support</a></li>
+             <li><a href="#/services">Journal Publication</a></li>
+             <li><a href="#/services">Conference Papers</a></li>
+             <li><a href="#/services">Free Mentorship</a></li>
+             <li><a href="#/services">Tools Training</a></li>
+           </ul>
+         </div>
+ 
+         <div class="footer-col">
+           <h3>Resources</h3>
+           <ul>
+             <li><a href="#/resources">Research Guides</a></li>
+             <li><a href="#/resources">Templates</a></li>
+             <li><a href="#/process">Publication Process</a></li>
+             <li><a href="#/faq">FAQ</a></li>
+             <li><a href="#/testimonials">Success Stories</a></li>
+             <li><a href="#/testimonials">Success Stories</a></li>
+           </ul>
+         </div>
+ 
+         <div class="footer-col">
+           <h3>Contact</h3>
+           <ul>
+             <li><a href="#/contact">Email & Social</a></li>
+             <li><a href="#/contact">WhatsApp Community</a></li>
+             <li><a href="#/contact">Messenger Support</a></li>
+             <li><a href="#/services">Get a Quote</a></li>
+           </ul>
+           <p style="margin-top:14px;color:var(--text-muted);font-size:13px">
+-            Built with Neon Tech UI • Single-file • Hash routing
++            Built with Digital Gradient UI • Single-file • Hash routing
+           </p>
+         </div>
+       </div>
+ 
+       <div class="copyright">
+         © <span id="year"></span> GARP — Global Academy for Research and Publication. All rights reserved.
+       </div>
+     </div>
+   </footer>
+ 
+   <!-- Floating Quick Chat Buttons -->
+-  <a class="messenger-float"
+-     href="https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846"
++  <a class="messenger-float messenger-link"
++     data-service="General Inquiry"
++     href="https://m.me/61583064699841"
+      target="_blank" rel="noopener">
+-    💬 Messenger
++    Messenger
+   </a>
+   <a class="whatsapp-float"
+-     href="https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t"
++     href="https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t"
+      target="_blank" rel="noopener">
+-    📲 WhatsApp
++    WhatsApp
+   </a>
+ 
+   <!-- Toast -->
+   <div class="toast" id="toast">Copied!</div>
+ 
+   <!-- Modal (Service details) -->
+   <div class="modal-back" id="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
+     <div class="modal">
+       <div class="modal-head">
+         <strong id="modalTitle">Service Title</strong>
+         <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+       </div>
+       <div class="modal-body">
+         <p id="modalIntro">
+-          Explore key deliverables and what’s included. For pricing and timeline, message us on Messenger/WhatsApp.
++          Explore key deliverables and what’s included. The Messenger link includes your selected service for faster support.
+         </p>
+         <div class="modal-list" id="modalList"></div>
+ 
+         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px">
+-          <a class="btn-sm messenger-btn"
+-             href="https://business.facebook.com/latest/inbox/messenger?asset_id=859045143957395&business_id=859683967226846"
++          <a class="btn-sm messenger-btn messenger-link"
++             id="modalMessenger"
++             data-service="General Inquiry"
++             href="https://m.me/61583064699841"
+              target="_blank" rel="noopener">
+-            💬 Message on Messenger
++            Message on Messenger
+           </a>
+           <a class="btn-sm"
+-             href="https://chat.whatsapp.com/GQo4YEEFLRg1swpdfdN38T?mode=gi_t"
++             href="https://chat.whatsapp.com/Cu1ycIPLtJzCQHLco77CCm?mode=gi_t"
+              target="_blank" rel="noopener"
+              style="background:rgba(37,211,102,.16); border-color:rgba(37,211,102,.34); color:#bff7d0;">
+-            📲 Join WhatsApp
++            Join WhatsApp
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <script>
+     /* =========================
+        NEON TECH — APP LOGIC
+        Hash routing + UI effects
+        ========================= */
+ 
+     // ---- Helpers
+     const $ = (q, root=document) => root.querySelector(q);
+     const $$ = (q, root=document) => Array.from(root.querySelectorAll(q));
++    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
++
++    const MESSENGER_PAGE_ID = "61583064699841";
++    const buildMessengerLink = (service) => {
++      const ref = service ? `?ref=${encodeURIComponent(service)}` : "";
++      return `https://m.me/${MESSENGER_PAGE_ID}${ref}`;
++    };
+ 
+     // ---- Year
+     $("#year").textContent = new Date().getFullYear();
+ 
+     // ---- Menu (mobile)
+     const nav = $("#nav");
+     const menuBtn = $("#menuBtn");
+     if (menuBtn){
+-      menuBtn.addEventListener("click", () => {
+-        nav.classList.toggle("open");
++      const setMenuState = (open) => {
++        nav.classList.toggle("open", open);
++        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
++      };
++      menuBtn.setAttribute("aria-controls", "nav");
++      menuBtn.setAttribute("aria-expanded", "false");
++      menuBtn.addEventListener("click", (e) => {
++        e.stopPropagation();
++        setMenuState(!nav.classList.contains("open"));
+       });
+       // close nav on link click (mobile)
+-      $$("#nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
++      $$("#nav a").forEach(a => a.addEventListener("click", () => setMenuState(false)));
+       // close nav on outside click (mobile)
+       document.addEventListener("click", (e) => {
+-        if (!nav.contains(e.target) && !menuBtn.contains(e.target)) nav.classList.remove("open");
++        if (!nav.contains(e.target) && !menuBtn.contains(e.target)) setMenuState(false);
++      });
++      window.addEventListener("resize", () => {
++        if (window.innerWidth > 980) setMenuState(false);
+       });
+     }
+ 
+     // ---- Theme toggle (dark/light)
+     const themeBtn = $("#themeBtn");
+     const THEME_KEY = "garp_theme";
+     const setTheme = (mode) => {
+       document.body.classList.toggle("light", mode === "light");
+       if (themeBtn) themeBtn.textContent = mode === "light" ? "☀️" : "🌙";
+       localStorage.setItem(THEME_KEY, mode);
+     };
+     const initTheme = () => {
+       const saved = localStorage.getItem(THEME_KEY);
+       if (saved) return setTheme(saved);
+       // default: dark (as designed)
+       setTheme("dark");
+     };
+     initTheme();
+     if (themeBtn){
+       themeBtn.addEventListener("click", () => {
+         const isLight = document.body.classList.contains("light");
+         setTheme(isLight ? "dark" : "light");
+       });
+     }
+ 
+     // ---- Hash Router
+     const pages = $$(".page");
+     const navLinks = $$("#nav a");
+     const routes = pages.reduce((acc, p) => (acc[p.dataset.page] = p, acc), {});
+     const DEFAULT_ROUTE = "home";
+ 
+     function setActiveNav(route){
+       navLinks.forEach(a => {
+         a.classList.toggle("active", a.dataset.route === route);
+       });
+     }
+ 
+     function showPage(route){
+       pages.forEach(p => p.classList.remove("active"));
+       const el = routes[route] || routes[DEFAULT_ROUTE];
+       el.classList.add("active");
+       setActiveNav(route in routes ? route : DEFAULT_ROUTE);
+ 
+       // ensure scroll to top when page changes
+-      window.scrollTo({ top: 0, behavior: "smooth" });
++      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+ 
+       // re-trigger reveal for new page
+       requestAnimationFrame(() => revealNow());
+     }
+ 
+     function parseRoute(){
+       const hash = (location.hash || "").trim();
+       // expecting "#/home"
+       const match = hash.match(/^#\/([a-zA-Z0-9_-]+)/);
+       return match ? match[1] : DEFAULT_ROUTE;
+     }
+ 
+     window.addEventListener("hashchange", () => showPage(parseRoute()));
+     // first render
+     if (!location.hash) location.hash = `#/${DEFAULT_ROUTE}`;
+     showPage(parseRoute());
+ 
+     // ---- Reveal on scroll
+     const revealNow = () => {
+       const els = $$(".reveal");
+       const vh = window.innerHeight || 800;
+       els.forEach(el => {
+         const rect = el.getBoundingClientRect();
+         const visible = rect.top < vh - 90;
+         if (visible) el.classList.add("show");
+       });
+     };
+     window.addEventListener("scroll", revealNow, { passive: true });
+     revealNow();
+ 
+     // ---- Simple tilt effect (no library)
+     // Elements with data-tilt get a subtle 3D hover
+     const tiltEls = $$("[data-tilt]");
+-    tiltEls.forEach(el => {
+-      const max = 10; // deg
+-      const reset = () => {
+-        el.style.transform = "";
+-      };
+-      const onMove = (e) => {
+-        const r = el.getBoundingClientRect();
+-        const x = (e.clientX - r.left) / r.width;
+-        const y = (e.clientY - r.top) / r.height;
+-        const rx = (max/2 - y * max);
+-        const ry = (x * max - max/2);
+-        el.style.transform = `translateY(-2px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+-      };
+-
+-      el.addEventListener("mousemove", onMove);
+-      el.addEventListener("mouseleave", reset);
+-      el.addEventListener("mouseenter", () => {
+-        el.style.transition = "transform .12s ease";
+-        setTimeout(() => (el.style.transition = ""), 120);
++    if (!prefersReducedMotion){
++      tiltEls.forEach(el => {
++        const max = 10; // deg
++        const reset = () => {
++          el.style.transform = "";
++        };
++        const onMove = (e) => {
++          const r = el.getBoundingClientRect();
++          const x = (e.clientX - r.left) / r.width;
++          const y = (e.clientY - r.top) / r.height;
++          const rx = (max/2 - y * max);
++          const ry = (x * max - max/2);
++          el.style.transform = `translateY(-2px) rotateX(${rx}deg) rotateY(${ry}deg)`;
++        };
++
++        el.addEventListener("mousemove", onMove);
++        el.addEventListener("mouseleave", reset);
++        el.addEventListener("mouseenter", () => {
++          el.style.transition = "transform .12s ease";
++          setTimeout(() => (el.style.transition = ""), 120);
++        });
+       });
+-    });
++    }
+ 
+     // ---- Toast + Copy
+     const toast = $("#toast");
+     let toastTimer = null;
+     function showToast(msg="Copied!"){
+       if (!toast) return;
+       toast.textContent = msg;
+       toast.classList.add("show");
+       clearTimeout(toastTimer);
+       toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+     }
+ 
++    const bindMessengerLinks = () => {
++      $$(".messenger-link").forEach(link => {
++        const service =
++          link.dataset.service ||
++          link.closest(".service")?.dataset.title ||
++          "General Inquiry";
++        const url = buildMessengerLink(service);
++        if (link.tagName === "A") link.href = url;
++        link.addEventListener("click", (e) => {
++          if (link.tagName !== "A") {
++            e.preventDefault();
++            window.open(url, "_blank", "noopener");
++          }
++        });
++      });
++    };
++    bindMessengerLinks();
++
+     window.copyText = async function(text){
+       try{
+         await navigator.clipboard.writeText(text);
+         showToast("Copied!");
+       }catch(err){
+         // fallback
+         const ta = document.createElement("textarea");
+         ta.value = text;
+         document.body.appendChild(ta);
+         ta.select();
+         document.execCommand("copy");
+         ta.remove();
+         showToast("Copied!");
+       }
+     };
+ 
+     // ---- Publications: abstract toggle
+     window.toggleAbstract = function(btn){
+       const item = btn.closest(".publication-item");
+       if (!item) return;
+       const abstract = item.querySelector(".pub-abstract");
+       if (!abstract) return;
+ 
+       const isOpen = abstract.classList.contains("open");
+       abstract.classList.toggle("open", !isOpen);
+       btn.classList.toggle("active", !isOpen);
+     };
+ 
+     // ---- Services modal
+     const modalBack = $("#modalBack");
+     const modalTitle = $("#modalTitle");
+     const modalList = $("#modalList");
+     const modalClose = $("#modalClose");
++    const modalMessenger = $("#modalMessenger");
+ 
+     function openModal(title, items){
+       if (!modalBack) return;
+       modalTitle.textContent = title || "Service Details";
+       modalList.innerHTML = "";
+ 
+       (items || []).forEach(txt => {
+         const div = document.createElement("div");
+         div.className = "ml";
+         div.textContent = txt.trim();
+         modalList.appendChild(div);
+       });
+ 
++      if (modalMessenger){
++        const serviceName = title || "General Inquiry";
++        modalMessenger.dataset.service = serviceName;
++        modalMessenger.href = buildMessengerLink(serviceName);
++      }
++
+       modalBack.style.display = "flex";
+       modalBack.setAttribute("aria-hidden", "false");
+       document.body.style.overflow = "hidden";
+     }
+ 
+     function closeModal(){
+       if (!modalBack) return;
+       modalBack.style.display = "none";
+       modalBack.setAttribute("aria-hidden", "true");
+       document.body.style.overflow = "";
+     }
+ 
+     if (modalClose) modalClose.addEventListener("click", closeModal);
+     if (modalBack){
+       modalBack.addEventListener("click", (e) => {
+         if (e.target === modalBack) closeModal();
+       });
+     }
+     document.addEventListener("keydown", (e) => {
+       if (e.key === "Escape") closeModal();
+     });
+ 
+     // bind service cards
+     $$(".service").forEach(card => {
+       card.addEventListener("click", (e) => {
